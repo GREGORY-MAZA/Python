@@ -1,18 +1,18 @@
-def calculateArgs(*args):
+def calculer_Args(*args):
     total = 0
     for num in args:
         total += num
     return total
 
 
-def calculateKwargs(**kwargs):
+def calculer_Kwargs(**kwargs):
     total = 0
     for key, value in kwargs.items():
         total += value
     return total
 
 
-def concateArgs(*args):
+def concatener_Args(*args):
     concatenationArgs = ""
     for myString in args:
         if myString.startswith('A'):
@@ -20,7 +20,7 @@ def concateArgs(*args):
     return concatenationArgs
 
 
-def concateKwargs(**kwargs):
+def concatener_Kwargs(**kwargs):
     concatenationArgs = ""
     for key, value in kwargs.items():
         if value.startswith('A'):
@@ -29,10 +29,10 @@ def concateKwargs(**kwargs):
 
 
 def main():
-    print(calculateArgs(1, 2, 3))
-    print(calculateKwargs(a=1, b=2, c=4))
-    print(concateArgs("Albert", "Hervé", "Alfred", "Michel"))
-    print(concateKwargs(a="Albert", b="Hervé", c="Alfred", d="Michel"))
+    print(calculer_Args(1, 2, 3))
+    print(calculer_Kwargs(a=1, b=2, c=4))
+    print(concatener_Args("Alpinestar", "Furygan", "Astier", "Kaamelott"))
+    print(concatener_Kwargs(a="Alpinestar", b="Furygan", c="Astier", d="Kaamelott"))
 
 
 if __name__ == '__main__':
