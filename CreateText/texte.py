@@ -5,7 +5,7 @@ def afficher_ligne():
     with open("data.txt", "r") as file:
         lignes = file.readlines()
         for ligne in lignes:
-            saisie_ligne_suivante = input("Taper s pour passer à la ligne suivante")
+            saisie_ligne_suivante = input("Voici la liste : Taper s pour passer à la ligne suivante ")
             if saisie_ligne_suivante == "s":
                 print(ligne)
     main()
@@ -18,21 +18,13 @@ def ajouter_une_ligne():
 
 
 def main():
-    # Permet de savoir sur le chemin exsite
     path = 'data.txt'
 
-    # print('Le fichier', os.path.abspath(path),
-    # end=' ')  # os.path = module , abspath(path) est une fonction du module os.path
-
     if os.path.exists(path):  # Vérifie si le chemin existe
-        ajouter_ligne = input('Un fichier data.txt est déjà présent. Voulez-vous rajouter une ligne ? y / n')
+        ajouter_ligne = input('Un fichier data.txt est déjà présent. Voulez-vous rajouter une ligne ? y / n ')
         if ajouter_ligne == "y":
             ajouter_une_ligne()
         afficher_ligne()
-        #     file.close()
-        # if saisie_utilisateur == "n":
-        #     print("Tant pis, Goodbye")
-        #     exit()
     else:
         try:
             print("Création du fichier data.txt")
@@ -43,9 +35,6 @@ def main():
             print('Fichier introuvable.')
         except IOError:
             print('Erreur d\'ouverture.')
-
-
-# Test si on peut ouvrir le fichier
 
 
 if __name__ == '__main__':
